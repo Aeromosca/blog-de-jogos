@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
     const errorMessage = document.getElementById('error-message');
-    const apiUrl = 'http://localhost:3000/login';
+    const apiUrl = 'http://localhost:3000/register';
 
-    if (!loginForm) return;
-
-    loginForm.addEventListener('submit', async (e) => {
+    registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        const username = document.getElementById('username').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
@@ -20,25 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({ username, email, password }),
             });
 
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('userToken', data.token);
-                localStorage.setItem('username', data.user.username);
-                localStorage.setItem('isAdmin', data.user.is_admin);
-                
-                window.location.href = 'index.html'; 
+                alert('Cadastro realizado com sucesso! Faça login para continuar.');
+                window.location.href = 'login.html'; 
 
             } else {
-                errorMessage.textContent = data.error || 'Erro desconhecido. Tente novamente.';
+                errorMessage.textContent = data.error || 'Erro desconhecido durante o cadastro.';
                 errorMessage.style.display = 'block';
             }
         } catch (error) {
-            console.error('Erro de rede:', error);
-            errorMessage.textContent = 'Não foi possível conectar ao servidor. Verifique se o backend está rodando na porta 3000.';
+            errorMessage.textContent = 'Não foi possível conectar ao servidor para registrar.';
             errorMessage.style.display = 'block';
         }
     });

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosca Games - Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎮 Mosca Games - Admin</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="login.html" id="login-link">Login</a>
+            <a href="#" id="admin-link" style="display:none;">Admin</a>
+        </nav>
+    </header>
+
+    <main class="admin-page">
+        <div id="auth-status">
+            
+            <section class="admin-create">
+                <h2>Criar Nova Postagem</h2>
+                <form id="create-post-form">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">URL da Imagem</label>
+                        <input type="url" id="imageUrl" name="imageUrl">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Conteúdo (Markdown)</label>
+                        <textarea id="content" name="content" rows="10" required></textarea>
+                    </div>
+                    <button type="submit">Publicar Postagem</button>
+                    <p id="message" class="error"></p>
+                </form>
+            </section>
+            
+            <section class="admin-list">
+                <h2>Gerenciar Postagens Existentes</h2>
+                <div class="posts-table-container">
+                    <table id="posts-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Autor</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="posts-list-body">
+                            </tbody>
+                    </table>
+                </div>
+                <p id="list-message" class="error"></p>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mosca Games - Login</title>
+    <title>Mosca Games - Cadastro</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header>
         <h1>🎮 Mosca Games</h1>
         <nav>
@@ -18,8 +17,12 @@
 
     <main class="auth-page">
         <section class="auth-form-container">
-            <h2>Acesse sua conta</h2>
-            <form id="login-form">
+            <h2>Crie sua conta</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="username">Nome de Usuário</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" required>
@@ -28,14 +31,14 @@
                     <label for="password">Senha</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit">Entrar</button>
+                <button type="submit">Cadastrar</button>
                 <p id="error-message" class="error" style="display:none;"></p>
-                <p class="switch-auth">Não tem conta? <a href="register.html">Cadastre-se</a></p>
+                <p class="switch-auth">Já tem conta? <a href="login.html">Faça Login</a></p>
             </form>
         </section>
     </main>
 
+    <script src="js/register.js"></script>
     <script src="js/auth.js"></script>
-    <script src="js/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="post-title">Detalhes da Postagem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🎮 Blog de Jogos</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="#" id="login-link">Login</a>
+            <a href="#" id="admin-link" style="display:none;">Admin</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="single-post"></section>
+
+        <section id="comments-section">
+            <h3>Comentários</h3>
+            <div id="comments-container">
+                </div>
+            
+            <form id="comment-form" style="display:none;">
+                <h4>Adicionar Comentário</h4>
+                <textarea id="comment-content" placeholder="Escreva seu comentário..." required></textarea>
+                <button type="submit">Comentar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="js/post-details.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
