@@ -5,6 +5,8 @@
     --cor-card-fundo: #1c1c1c;
     --cor-card-borda: #333333;
     --cor-link: var(--cor-destaque);
+    --fonte-principal: 'Orbitron', 'Arial', sans-serif;
+    --fonte-corpo: 'Arial', sans-serif;
 }
 
 * {
@@ -14,7 +16,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--fonte-corpo);
     background-color: var(--cor-fundo-principal);
     color: var(--cor-texto-principal);
     line-height: 1.6;
@@ -50,9 +52,28 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
 header h1 {
     font-size: 1.8em;
     color: var(--cor-destaque);
+    font-family: var(--fonte-principal);
+    font-weight: 800;
+}
+
+header h1 a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+header nav {
+    position: relative;
+    z-index: 200;
 }
 
 header nav a {
@@ -130,6 +151,7 @@ header nav a:hover {
 #single-post h1 {
     color: var(--cor-destaque);
     margin-bottom: 10px;
+    font-family: var(--fonte-principal);
 }
 
 .post-content {
@@ -197,7 +219,6 @@ header nav a:hover {
 #single-post #like-button.liked:hover {
     background-color: #b3003e;
 }
-
 
 .auth-page {
     display: flex;

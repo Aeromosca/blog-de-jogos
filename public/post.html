@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="post-title">Detalhes da Postagem</title>
+    <title id="post-title">MoscaGames - Detalhes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>🎮 Blog de Jogos</h1>
+        <div class="logo-container">
+            <h1><a href="index.html">MoscaGames</a></h1>
+        </div>
+        
         <nav>
-            <a href="index.html">Início</a>
-            <a href="#" id="login-link">Login</a>
-            <a href="#" id="admin-link" style="display:none;">Admin</a>
+            <a href="login.html" id="login-link">Login</a>
+            <a href="admin.html" id="admin-link" style="display:none;">Admin</a>
         </nav>
     </header>
     
@@ -22,7 +25,7 @@
         <section id="comments-section">
             <h3>Comentários</h3>
             <div id="comments-container">
-                </div>
+            </div>
             
             <form id="comment-form" style="display:none;">
                 <h4>Adicionar Comentário</h4>
@@ -33,7 +36,7 @@
 
     </main>
 
-    <script src="js/post-details.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/post-details.js"></script>
 </body>
 </html>

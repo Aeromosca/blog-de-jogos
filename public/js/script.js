@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const apiUrl = 'http://localhost:3000/posts';
     const loginLink = document.getElementById('login-link');
 
-    // Funções de Autenticação Básica (Logout)
     function handleLogout() {
         localStorage.removeItem('userToken');
         localStorage.removeItem('username');
@@ -20,16 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loginLink.textContent = 'Login';
     }
 
-
-    // Função para buscar e exibir as postagens
     async function fetchPosts() {
         try {
             const response = await fetch(apiUrl);
             
             if (!response.ok) {
-                // Se a API retornar um erro, lança uma exceção.
-                // A mensagem de erro "Servidor indisponível" que você vê indica que o fetch falhou.
-                // Verifique seu PostgreSQL!
                 throw new Error('Erro ao buscar as postagens. Verifique o servidor PostgreSQL.');
             }
             
